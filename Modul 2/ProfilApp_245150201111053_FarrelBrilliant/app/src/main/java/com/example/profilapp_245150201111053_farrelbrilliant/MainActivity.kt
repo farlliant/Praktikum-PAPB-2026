@@ -6,15 +6,17 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Scaffold
@@ -61,17 +63,19 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun ProfileScreen(modifier: Modifier = Modifier) {
 
-    Box(
+    Column(
         modifier = modifier
             .fillMaxSize()
-            .background(Color(0xFFF3F4F6)),
-        contentAlignment = Alignment.Center
+            .background(Color(0xFFF3F4F6))
+            .verticalScroll(rememberScrollState())
+            .padding(20.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
     ) {
 
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
-                .padding(20.dp)
                 .clip(RoundedCornerShape(24.dp))
                 .background(Color.White)
                 .padding(
@@ -141,7 +145,11 @@ fun FollowButton() {
             isFollowed = !isFollowed
         },
         colors = ButtonDefaults.buttonColors(
-            containerColor = Color(0xFF2563EB),
+            containerColor = if (isFollowed) {
+                Color(0xFF16A34A)
+            } else {
+                Color(0xFF2563EB)
+            },
             contentColor = Color.White
         )
     ) {
