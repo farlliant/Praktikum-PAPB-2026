@@ -1,3 +1,5 @@
+# Repository-wide ignore rules for PAPB practical projects
+
 # Gradle
 .gradle/
 **/build/
