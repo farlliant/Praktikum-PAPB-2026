@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -24,12 +24,12 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize()
                 ) { innerPadding ->
 
-                    Column(
+                    Row(
                         modifier = Modifier.padding(innerPadding)
                     ) {
                         Text("Nama: Andi")
+                        Text(" | ")
                         Text("NIM: 215150201111000")
-                        Text("Kelas: A")
                     }
                 }
             }
