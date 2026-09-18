@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize()
                 ) { innerPadding ->
 
-                    FollowButton(
+                    FollowApp(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -43,7 +43,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun FollowButton(modifier: Modifier = Modifier) {
+fun FollowApp(modifier: Modifier = Modifier) {
 
     var isFollowed by remember {
         mutableStateOf(false)
@@ -54,19 +54,31 @@ fun FollowButton(modifier: Modifier = Modifier) {
         contentAlignment = Alignment.Center
     ) {
 
-        Button(
+        FollowButton(
+            isFollowed = isFollowed,
             onClick = {
                 isFollowed = !isFollowed
             }
-        ) {
+        )
+    }
+}
 
-            Text(
-                text = if (isFollowed) {
-                    "Unfollow"
-                } else {
-                    "Follow"
-                }
-            )
-        }
+@Composable
+fun FollowButton(
+    isFollowed: Boolean,
+    onClick: () -> Unit
+) {
+
+    Button(
+        onClick = onClick
+    ) {
+
+        Text(
+            text = if (isFollowed) {
+                "Unfollow"
+            } else {
+                "Follow"
+            }
+        )
     }
 }
