@@ -27,3 +27,6 @@ Thumbs.db
 
 # Generated files
 captures/
+
+# Gradle daemon JVM configuration
+**/gradle/gradle-daemon-jvm.properties
