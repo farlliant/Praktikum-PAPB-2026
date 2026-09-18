@@ -13,5 +13,6 @@ Repository ini digunakan untuk menyimpan implementasi dan dokumentasi praktikum 
 | Modul | Materi | Status |
 | --- | --- | --- |
 | Modul 2 | Konsep Dasar UI Jetpack Compose | Selesai |
+| Modul 3 | Konsep State dan Rekomposisi | Selesai |
 
 Repository akan diperbarui secara bertahap sesuai pengerjaan modul praktikum berikutnya.
