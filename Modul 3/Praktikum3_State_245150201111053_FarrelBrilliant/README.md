@@ -1,0 +1,5 @@
+# Praktikum 3 - State dan Rekomposisi
+
+Praktikum 3 merupakan aplikasi sederhana yang dibuat menggunakan Jetpack Compose untuk menerapkan konsep state dan recomposition. Aplikasi terdiri dari Counter Plus-Minus, Box yang dapat berganti warna merah dan hijau ketika ditekan, serta profil interaktif dengan tombol Follow/Unfollow dan indikator status. Nilai counter, kondisi warna, dan status follow disimpan menggunakan `remember { mutableStateOf() }`, sehingga ketika state berubah, bagian UI yang menggunakan nilai tersebut akan diperbarui secara otomatis melalui proses recomposition. Pada bagian counter juga diberikan kondisi agar nilainya tidak dapat turun di bawah nol.
+
+Menurut saya, penggunaan state pada Jetpack Compose membuat pembuatan UI lebih ringkas karena perubahan tampilan dapat langsung dikaitkan dengan nilai state menggunakan Kotlin. Ketika state berubah, Compose akan memperbarui bagian UI yang membutuhkan perubahan tanpa harus mengatur setiap komponen secara manual seperti pada XML layout. Pendekatan ini membuat kode lebih mudah dibaca, lebih terstruktur, dan lebih mudah dikembangkan ketika aplikasi memiliki banyak interaksi.
